@@ -1,0 +1,23 @@
+{
+"ToaNha":
+[
+  {
+		"Ten":"Viện công nghệ thông tin và Truyền thông",
+		"ViDo":21.004697,
+		"KinhDo":105.844171,
+	  	"ThongTin":"viencntt"
+  },
+  {
+		"Ten":"Viện điện- điện tử viễn thông",
+		"ViDo":21.004339,
+		"KinhDo":105.844905,
+	    "ThongTin":"viendien"
+  },
+  {
+		"Ten":"Viện công nghệ sinh học và thực phẩm",
+		"ViDo":21.004538,
+		"KinhDo":105.846638,
+	    "ThongTin":"viencnsh"
+  }
+]
+}

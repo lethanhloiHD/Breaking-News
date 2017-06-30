@@ -1,0 +1,35 @@
+{
+"ToaNha":
+[
+  {
+		"Ten":"Thư viện Tạ Quang Bửu",
+		"ViDo":21.004697,
+		"KinhDo":105.84417,
+	  	"ThongTin":"viencnsh"
+  },
+  {
+		"Ten":"Nhà D5",
+		"ViDo":21.004339,
+		"KinhDo":105.844905,
+	  	"ThongTin":"viencnsh"
+  },
+  {
+		"Ten":"Nhà B1",
+		"ViDo":21.004538,
+		"KinhDo":105.846638,
+	  	"ThongTin":"viencntt"
+  },
+  {
+		"Ten":"Nhà C1",
+		"ViDo":21.007032,
+		"KinhDo":105.843532,
+	  	"ThongTin":"viencntt"
+  },
+  {
+		"Ten":"Nhà C2",
+		"ViDo":21.006431,
+		"KinhDo":105.842465,
+	  	"ThongTin":"viencnsh"
+  }
+]
+}

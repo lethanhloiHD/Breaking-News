@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Sự Kiện Tại Địa Điểm    :"
+            android:id="@+id/textView6"
+            android:textStyle="bold"
+            android:gravity="center|center_horizontal" />
+
+        <Spinner
+            android:layout_width="400px"
+            android:layout_height="match_parent"
+            android:id="@+id/spinnerTrangTinDD" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="XEM"
+            android:id="@+id/btnTTDD" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Tin Tức Tại Khoa-Viện  :"
+            android:id="@+id/textView2"
+            android:password="false"
+            android:phoneNumber="false"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:layout_width="400px"
+            android:layout_height="match_parent"
+            android:id="@+id/spTrangtin"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="xem"
+            android:id="@+id/btnTTKV" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đang diễn ra "
+            android:id="@+id/btnNow" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/list_tintuc"
+            tools:listitem="@layout/tintuc" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

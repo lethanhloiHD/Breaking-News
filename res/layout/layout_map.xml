@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.lethanhloi.testmaps.MapsActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.lethanhloi.testmaps.MapsActivity"
+
+        android:layout_weight="0.94" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/color1"
+        android:visibility="visible">
+        <GridLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:rowOrderPreserved="false"
+            android:rowCount="1"
+            android:columnCount="21"
+            android:contextClickable="false">
+            <Button
+                android:onClick="toggleFind"
+                android:id="@+id/btnPath"
+                android:layout_width="137dp"
+                android:layout_height="100px"
+                android:text="Tìm đường đi"
+                android:layout_rowWeight="1" />
+            <Button
+                android:onClick="toggleFind"
+                android:id="@+id/btnFindLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="100px"
+                android:text="Tìm tòa nhà"
+                android:layout_rowWeight="2" />
+
+            <Button
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:text="GPS"
+                android:id="@+id/myLocation"
+                android:layout_row="0"
+                android:layout_column="20" />
+
+        </GridLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity"
+            android:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/find_path"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Đi Từ :"
+                        android:textAlignment="center"
+                        android:gravity="center_vertical"
+                        android:paddingRight="10px" />
+                    <Spinner
+                        android:id="@+id/sp1"
+                        android:layout_width="match_parent"
+                        android:layout_height="70px">
+                    </Spinner>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Đến    :"
+                        android:textAlignment="center"
+                        android:gravity="center_vertical"
+                        android:paddingRight="10px" />
+                    <Spinner
+                        android:id="@+id/sp2"
+                        android:layout_width="match_parent"
+                        android:layout_height="70px">
+                    </Spinner>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Find path"
+                        android:id="@+id/btnFindPath" />
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_distance"/>
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 km"
+                        android:id="@+id/tvDistance" />
+
+                    <ImageView
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_clock"/>
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 min"
+                        android:id="@+id/tvDuration" />
+                </LinearLayout>
+
+
+                <!--android:id="@+id/etDestination" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/find_location"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Tòa nhà    :"
+                        android:textAlignment="center"
+                        android:gravity="center_vertical"
+                        android:paddingRight="10px" />
+                    <Spinner
+                        android:id="@+id/spToaNha"
+                        android:layout_width="300px"
+                        android:layout_height="70px"
+                        android:layout_weight="1">
+                    </Spinner>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tìm kiếm"
+                        android:id="@+id/btnTimKiemToaNha" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:text="Khoa Viện:"
+                        android:textAlignment="center"
+                        android:gravity="center_vertical"
+                        android:paddingRight="10px" />
+                    <Spinner
+                        android:id="@+id/spKhoaVien"
+                        android:layout_width="300px"
+                        android:layout_height="70px"
+                        android:layout_weight="1">
+                    </Spinner>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tìm kiếm"
+                        android:id="@+id/btnTimKiemKhoaVien" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/circle"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="70px"
+                    android:background="@color/color4">
+
+                    <TextView
+                        android:layout_width="150px"
+                        android:layout_height="match_parent"
+                        android:text="Bán kính :"
+                        android:gravity="center_vertical|center|center_horizontal"
+                        android:textStyle="italic"
+                        android:layout_gravity="center_vertical" />
+
+                    <EditText
+                        android:layout_width="200px"
+                        android:layout_height="80px"
+                        android:id="@+id/edRadius"
+                        android:text="100" />
+
+                    <Button
+                        android:layout_width="200px"
+                        android:layout_height="match_parent"
+                        android:id="@+id/btnRadius"
+                        android:text="Tìm kiếm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="500px"
+                    android:visibility="gone"
+                    android:id="@+id/LocalAndFeed">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:background="@color/color2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50px"
+                            android:textColor="@color/color3"
+                            android:text="Đang ở gần các tòa nhà :"
+                            android:id="@+id/textView7" />
+
+                        <ListView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/listLoRadius" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:background="@color/color2">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="50px"
+                            android:textColor="@color/color3"
+                            android:text="Sự kiện đang diễn ra ở gần bạn :"
+                            android:id="@+id/textView8" />
+
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/listViewSuKien"
+                            tools:listitem="@layout/tintuc"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
